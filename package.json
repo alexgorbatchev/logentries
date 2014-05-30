@@ -8,7 +8,7 @@
     "logentries.com",
     "api"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/alexgorbatchev/logentries",
   "author": "Richard Rodger <richard@ricebridge.com> (http://richardrodger.com/)",
   "contributors": [
