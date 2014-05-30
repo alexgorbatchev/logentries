@@ -7,7 +7,7 @@
 
 [![NPM](https://nodei.co/npm/logentries.svg)](https://npmjs.org/package/logentries)
 
-A Node.js wrapper for [logentries.com] APIs. **This is a fork of the original [node-entries](https://github.com/rjrodger/node-logentries) that is being maintained.
+A Node.js wrapper for [logentries.com] APIs. **This is a fork of the original [node-entries](https://github.com/rjrodger/node-logentries) that is being maintained.**
 
 The _logentries_ module makes it very easy to log directly to your [logentries.com] account direct from Node.js! The _logentries_ module does not depend on any non-core modules. You also need a [logentries.com] account - [see getting started with logentries.com](https://logentries.com/docs/configure/#section9).
 
