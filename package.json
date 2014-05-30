@@ -1,27 +1,35 @@
 {
-  "name": "node-logentries",
-  "description": "A winston-compatible wrapper library for the logentries.com service",
-  "keywords": ["log", "logging", "winston", "logentries", "logentries.com", "wrapper","api"],
+  "name": "logentries",
+  "description": "A wrapper library for the logentries.com service.",
+  "keywords": [
+    "log",
+    "logging",
+    "logentries",
+    "logentries.com",
+    "api"
+  ],
   "version": "0.1.4",
-  "homepage": "https://github.com/rjrodger/node-logentries",
+  "homepage": "https://github.com/alexgorbatchev/logentries",
   "author": "Richard Rodger <richard@ricebridge.com> (http://richardrodger.com/)",
   "contributors": [
+    "Alex Gorbatchev (https://github.com/alexgorbatchev)",
     "Richard Rodger (http://richardrodger.com)",
     "Mark Lacomber  (https://github.com/MarkLC)"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "main": "lib/logentries",
-  "directories": {
-    "lib": "lib"
+  "scripts": {
+    "test": "mocha test/*.test.js"
   },
-  "repository": { "type" : "git", "url" : "https://github.com/rjrodger/node-logentries.git" },
-  "files":[
-    "package.json",
-    "README.md",
-    "lib/logentries.js" 
-  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexgorbatchev/logentries.git"
+  },
   "engines": {
     "node": "*"
-  }
+  },
+  "devDependencies": {
+    "mocha": "^1.20.0"
+  },
+  "license": "BSD"
 }

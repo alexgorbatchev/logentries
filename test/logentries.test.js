@@ -1,12 +1,7 @@
 /* Copyright (c) 2011-2013 Richard Rodger, BSD License */
 "use strict";
 
-// mocha logentries.test.js
-
-
 var logentries = require('../lib/logentries')
-
-
 var assert = require('assert')
 
 
@@ -19,7 +14,6 @@ function arreq( from, a, b ) {
 
   return true;
 }
-
 
 function SimpleTestTransport( expect ) {
   var self = this
@@ -35,12 +29,12 @@ function SimpleTestTransport( expect ) {
     while( 0 < queue.length ) {
       var entry = queue.shift()
       var check = expect[index]
-      
+
       // Is options.timestamp === true?
       if ( entry.length > 2 ) {
         check.unshift('date')
       }
-      
+
       //console.log(check,entry)
       assert.ok( arreq(1,check,entry), "Expected: '" + check + "'. Actual: '" + entry + "'" )
       index++
@@ -142,7 +136,7 @@ describe('logentries',function(){
 
     log.info('t1')
     t.ok()
-    
+
     log = logentries.logger({levels:{foo:0,bar:1},transport:t=new SimpleTestTransport([
       ['foo','t1'],
       ['bar','t2']
@@ -150,7 +144,7 @@ describe('logentries',function(){
 
     log.foo('t1')
     log.bar('t2')
-    
+
     assert.ok( !log.info )
     t.ok()
 
@@ -180,12 +174,12 @@ describe('logentries',function(){
     catch(e) {
       assert.equal("unknown log level: bogus",e.message)
     }
-    
+
     var log2 = logentries.logger({
       timestamp: false,
       transport:t=new SimpleTestTransport([['info','t1']
     ])})
-    
+
     log2.info('t1')
     t.ok()
   })
@@ -198,9 +192,9 @@ describe('logentries',function(){
     for( var i = 0; i < 111; i++ ) {
       expect.push(['info','t'+i])
     }
-    
+
     var log = logentries.logger({transport:t=new ConnectingTestTransport( expect )})
-    
+
     function logit(i) {
       if( i < expect.length ) {
         log.info(expect[i][1] )
@@ -216,7 +210,7 @@ describe('logentries',function(){
   })
 
 
-  
+
   it('vartypes', function() {
     var t = null
     var d = new Date()
@@ -264,7 +258,7 @@ describe('logentries',function(){
 
     var log = logentries.logger({transport:t=new EventingTransport()})
     t.logger = log
-   
+
     log.on('error',function(err) {
       errors.push(err)
     })
@@ -279,7 +273,7 @@ describe('logentries',function(){
 
 
     log.emit('error','drill')
- 
+
     log.debug('t0')
     log.info('t1')
     log.warning('t2')
